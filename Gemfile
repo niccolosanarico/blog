@@ -3,25 +3,25 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11' #patched for latest vulnerability
 gem 'haml'
 gem 'devise' #user authenication library
+gem 'kramdown'
 
 gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
+group :development, :test do
+    gem 'rspec-rails'
     gem 'sqlite3'
 end
 
 group :test do
-    gem 'rspec-rails'
     gem 'capybara'
     gem 'cucumber-rails'
     gem 'cucumber-rails-training-wheels'
     gem 'database_cleaner'
     gem 'launchy'
-    gem 'sqlite3'
-end
+end 
 
 group :production do
     gem 'pg'
