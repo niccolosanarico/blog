@@ -1,0 +1,183 @@
+@import "bootstrap";
+
+/*
+ * Variables
+ */
+
+$text1: #666;
+$text2: #999;
+
+/* universal */
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding-top: 0px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+    h1 {
+      margin-bottom: 10px;
+    }
+}
+
+/* 
+ * typography 
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: $text2;
+}
+
+p {
+    font-size: 0.8em;
+    line-height: 1.1em;
+}
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    color: #111;
+    padding-top: 18px;
+    font-weight: bold;
+    line-height: 1;
+    &:hover {
+      color: $text1;
+      text-decoration: none;
+    }
+}
+
+
+.title_icon {
+    width: 30px;
+}
+
+.title_icon#hover {
+}
+
+/*
+ * Layout
+ */
+
+.blogpost {
+    padding: 10px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: thin;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        clear: both;
+    }
+}
+
+#about {
+    padding: 10px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: thin;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#social {
+    margin-top: 5px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: thin;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#tags {
+    margin-top: 5px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: thin;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/*
+ * Posts
+ */
+
+.posttitle {
+    p {
+        font-size: 1em;
+        color: #333;
+    }
+}
+
+.posttitle_text {
+    float: left;
+}
+
+.posttitle_date {
+    font-size: 0.8em;
+    color: $text1;
+    float: right;
+}
+
+.postfooter {
+    p {
+        font-size: 0.7em;
+        color: $text1;
+    }
+}
+
+/* 
+ * Footer
+ */
+
+footer {
+    margin-top: 40px;
+    padding-top: 5px;
+    border-top: 1px solid #BBB;
+    color: $text2;
+    font-size: 0.8em;
+
+    .madewithlove {
+        float:left;
+    }
+  
+    .thanks {
+        float: right;
+        color: $text2;
+        text-decoration: none;
+        &:hover {
+            color: $text1;
+        }
+    }
+}

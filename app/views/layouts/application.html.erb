@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>A Pinch of Value</title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <header class="navbar ">
+    <div class="navbar-inner">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target="nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <!-- Here Name -->
+
+      <%= link_to "<<= A Pinch of Value =>>",    '/', id: "logo" %>
+
+      <div class="nav-collapse collapse"> 
+        <ul class="nav pull-right">
+          <li><%= link_to image_tag("clock.png", :border=> 0, :class=>"title_icon"),     archive_path %></li>
+          <li><%= link_to image_tag("rss.png", :border=> 0, :class=>"title_icon"),       rss_path%></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="container">
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>
