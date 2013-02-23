@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "posts/new"
+
   get "users/new"
 
   # The priority is based upon order of creation:

@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 group :development, :test do
     gem 'rspec-rails'
     gem 'sqlite3'
+    gem 'annotate'
 end
 
 group :test do
