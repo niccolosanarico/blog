@@ -4,6 +4,7 @@ gem 'rails', '3.2.11' #patched for latest vulnerability
 gem 'haml'
 gem 'devise' #user authenication library
 gem 'kramdown'
+gem 'bcrypt-ruby' 
 
 gem 'bootstrap-sass'
 
