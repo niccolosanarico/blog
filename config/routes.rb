@@ -1,7 +1,4 @@
 Blog::Application.routes.draw do
-  get "posts/new"
-
-  get "users/new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -14,13 +11,15 @@ Blog::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
   #resources :blog do
-    root to: 'blog#index'
+  resources :users
 
-    match '/archive',   to: 'blog#archive'
-    match '/rss',       to: 'blog#rss'
-    match '/thanks',    to: 'blog#thanks'
+  root to: 'blog#index'
 
-    match '/signup',    to: 'users#new'
+  match '/archive',   to: 'blog#archive'
+  match '/rss',       to: 'blog#rss'
+  match '/thanks',    to: 'blog#thanks'
+  match '/signup',    to: 'users#new'
+
   #end
   
   # Sample resource route (maps HTTP verbs to controller actions automatically):

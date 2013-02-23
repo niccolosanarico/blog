@@ -7,6 +7,12 @@
 $text1: #666;
 $text2: #999;
 
+@mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /* universal */
 
 html {
@@ -180,4 +186,16 @@ footer {
             color: $text1;
         }
     }
+}
+
+/*
+ * DEBUG
+ */
+
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 100px;
+    @include box_sizing;
 }
