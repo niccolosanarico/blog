@@ -13,11 +13,12 @@ Blog::Application.routes.draw do
   #resources :blog do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts
 
   root to: 'blog#index'
 
   match '/archive',   to: 'blog#archive'
-  match '/rss',       to: 'blog#rss'
+  match '/feed',      to: 'posts#feed', :as => :feed, :defaults => { :format => 'atom' }
   match '/thanks',    to: 'blog#thanks'
   match '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new'

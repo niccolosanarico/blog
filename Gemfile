@@ -5,8 +5,9 @@ gem 'haml'
 gem 'devise' #user authenication library
 gem 'kramdown'
 gem 'bcrypt-ruby' 
-
 gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

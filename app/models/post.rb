@@ -7,10 +7,11 @@
 #  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  status     :string(255)
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :body, :title
+  attr_accessible :body, :title, :status
 
   validates :title, presence: true
 end

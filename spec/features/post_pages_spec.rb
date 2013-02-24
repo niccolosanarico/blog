@@ -3,16 +3,41 @@ require 'spec_helper'
 describe "Post Pages" do
     subject { page }
 
-    describe "Visit New post" do
+    describe "Create New post" do
         before { visit new_post_path }
 
-        it { should have_selector('h3', text: 'Insert Title') }
-        it { should have_selector('h3', text: 'Insert Body') }
+        it { should have_selector('p', text: 'Insert title:') }
+        it { should have_selector('p', text: 'Insert body:') }
+        it { should have_button('Save&Publish') }
+        it { should have_button('Save draft') }
+
+        describe "Save and publish content" do
+            before do 
+                fill_in 'title', "This is a title"
+                fill_in 'body', "This is body"
+                click_button 'Save&Publish'
+            end
+
+            it { shoud have_selector('p', text: 'Thank you for posting a new entry') }
+        end
+
+        describe "Save as draft" do
+            before do 
+                fill_in 'title', "This is a title"
+                fill_in 'body', "This is body"
+                click_button 'Save draft'
+            end
+
+            it { shoud have_selector('p', text: 'Insert title:') }
+            it { shoud have_selector('p', text: 'Insert body') }
+            it { should have_button('Save&Publish') }
+            it { should have_button('Save draft') }
+        end
     end
 
     describe "List posts" do
         # TODO Insert Conditions
-        before { visit all_posts_path }
+        before { visit posts_path }
 
         it { should have_selector('', text: '') }
     end 
@@ -23,10 +48,10 @@ describe "Post Pages" do
         it { should have_selector('h3', text: 'Edit Title') }
         it { should have_selector('h3', text: 'Edit Body') }
     end
-    
+
     describe "Show post" do
         # TODO Insert Conditions
-        before { visit show_post_path }
+        before { visit post_path }
 
         it { should have_selector('h3', text: '') }
         it { should have_selector('h3', text: '') }
