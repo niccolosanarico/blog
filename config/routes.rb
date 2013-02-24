@@ -12,6 +12,7 @@ Blog::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
   #resources :blog do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'blog#index'
 
@@ -19,6 +20,8 @@ Blog::Application.routes.draw do
   match '/rss',       to: 'blog#rss'
   match '/thanks',    to: 'blog#thanks'
   match '/signup',    to: 'users#new'
+  match '/signin',    to: 'sessions#new'
+  match '/signout',   to: 'sessions#destroy'
 
   #end
   
