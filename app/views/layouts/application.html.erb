@@ -34,7 +34,7 @@
                         <% if signed_in? %>
                             <li><%= link_to image_tag("add.png", :border=> 0, :class=>"title_icon", :id=>'add-new-post'),     new_post_path %></li>
                             <li><%= link_to image_tag("show_all.png", :border=> 0, :class=>"title_icon", :id=>'show-all-posts'),     posts_path %></li>
-                            <li><%= link_to image_tag("open_lock.png", :border=> 0, :class=>"title_icon", :id=>'sign-out'),     signout_path %></li>
+                            <li><%= link_to image_tag("open_lock.png", :border=> 0, :class=>"title_icon", :id=>'sign-out'),     signout_path, :id => "signout-link"%></li>
                         <% else %>    
                             <li><%= link_to image_tag("closed_lock.png", :border=> 0, :class=>"title_icon", :id=>'sign-in'),     signin_path %></li>
                         <% end %>

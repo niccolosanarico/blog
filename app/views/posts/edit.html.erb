@@ -1,6 +1,6 @@
 <div class="row-fluid">
     <% if signed_in? %>
-        <div class="span4 offset1">
+        <div class="span8 offset1">
             <%= form_tag(post_path(@post.id), :method=> :put, :id=>"edit-post-form") do %>
                 <div>
                     <p>Insert title: <p>

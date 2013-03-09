@@ -47,6 +47,8 @@ describe "Post Pages" do
 
         it { should have_selector('h3', text: 'Edit Title') }
         it { should have_selector('h3', text: 'Edit Body') }
+        it { should have_button('Save&Publish') }
+        it { should have_button('Save draft') }
     end
 
     describe "Show post" do
