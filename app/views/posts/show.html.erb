@@ -10,7 +10,7 @@
     <hr>
 
     <div class="postbody">
-      <p> <%= @post.body %> </p>
+      <%= sanitize Kramdown::Document.new(@post.body).to_html %>
     </div>
 
     <div class="postfooter">
