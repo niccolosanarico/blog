@@ -5,7 +5,7 @@
       <div class="posttitle_text">
         <p> <%= @post.title %> </p>
       </div>
-      <div class="posttitle_date"> <%= @post.published_at.strftime("%b %-d, %Y") %> </div>
+      <div class="posttitle_date"> <%= @post.published_at.nil? ? nil : @post.published_at.strftime("%b %-d, %Y") %> </div>
     </div>
     <hr>
 
