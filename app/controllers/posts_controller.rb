@@ -49,6 +49,9 @@ class PostsController < ApplicationController
 
         if(params[:publish])
             post.status="public";
+            if(post.published_at.nil?)
+                post.published_at = Time::now
+            end
             post.save  
             redirect_to post_path(:id=>post.id)
         end
