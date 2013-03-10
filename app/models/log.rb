@@ -1,3 +1,3 @@
 class Log < ActiveRecord::Base
-  attr_accessible :desc, :type
+  attr_accessible :desc, :notice
 end

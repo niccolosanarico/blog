@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         else
             # TODO create an error message, re-render the form and log the login tentative
             flash.now[:error] = 'Failed login. This has been logged and notified'
-            log = Log.new(:type => "Failed login", :desc => "#{user.email} - #{user.password}")
+            log = Log.new(:notice => "Failed login", :desc => "#{request.remote_ip} - #{params[:session][:email]} - #{params[:session][:password]}")
             log.save
             render 'new'
         end

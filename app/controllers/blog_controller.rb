@@ -5,6 +5,7 @@ class BlogController < ApplicationController
     end
 
     def thanks
+
     end
 end
 

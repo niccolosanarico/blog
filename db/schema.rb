@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130310151023) do
 
   create_table "logs", :force => true do |t|
-    t.string   "type"
+    t.string   "notice"
     t.string   "desc"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
