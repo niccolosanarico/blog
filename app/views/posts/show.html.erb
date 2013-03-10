@@ -5,7 +5,7 @@
       <div class="posttitle_text">
         <p> <%= @post.title %> </p>
       </div>
-      <div class="posttitle_date"> <%= @post.created_at %> </div>
+      <div class="posttitle_date"> <%= @post.published_at.strftime("%b %-d, %Y") %> </div>
     </div>
     <hr>
 
@@ -14,7 +14,9 @@
     </div>
 
     <div class="postfooter">
-      <p> This is my footer, with related tags and social media stuff </p>
+      <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Check out my new post" data-url=<%= "http://"+request.host+post_path(@post) %> data-count="horizontal" data-via="il_nico" target="_blank">
+        <span class="vhidden">Tweet</span>
+      </a>
     </div>
   </div>
 <% end %>

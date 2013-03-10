@@ -12,7 +12,7 @@ atom_feed :language => 'en-US' do |feed|
 
             # the strftime is needed to work with Google Reader.
             
-            entry.updated(item.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
+            entry.updated(item.published_at.nil? ? nil : item.published_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
 
             entry.author do |author|
                 author.name(entry.author_name)

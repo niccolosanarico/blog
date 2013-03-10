@@ -109,6 +109,7 @@ p {
 
 #about {
     padding: 10px;
+    font-size: 1.1em;
     border-style: solid;
     border-color: #ddd;
     border-width: thin;
@@ -117,9 +118,9 @@ p {
 }
 
 #nicoimg {
-    width: 50px;
-    padding-right: 3px;
-    padding-bottom: 3px;
+    width: 60px;
+    padding-right: 4px;
+    padding-bottom: 4px;
     float: left;
 }
 
@@ -149,8 +150,15 @@ p {
 
 .posttitle {
     p {
-        font-size: 1em;
+        font-size: 1.2em;
         color: #333;
+    }
+    a {
+        color: #333;
+        text-decoration: none;
+        &:hover {
+            color: #000;
+        }
     }
 }
 
@@ -164,7 +172,12 @@ p {
     float: right;
 }
 
+.postbody {
+    font-size: 1.2em;
+}
+
 .postfooter {
+    padding-top: 5px;
     p {
         font-size: 0.7em;
         color: $text1;

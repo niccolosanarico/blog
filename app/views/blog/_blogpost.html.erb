@@ -4,20 +4,20 @@
     <!-- Main body -->
     <div class="posttitle">
       <div class="posttitle_text">
-        <p> <%= post.title %> </p>
+        <p> <%= link_to post.title, post_path(post) %> </p>
       </div>
-      <div class="posttitle_date"> <%= post.created_at %> </div>
+      <div class="posttitle_date"> <%= post.published_at.nil? ? nil : post.published_at.strftime("%b %-d, %Y") %> </div>
     </div>
     <hr>
 
     <div class="postbody">
-      <p> <%= post.body %> </p>
+      <%= sanitize Kramdown::Document.new(post.body).to_html %>
     </div>
 
     <div class="postfooter">
-          <a href="http://twitter.com/share" class="socialite twitter-share" data-url="http://www.niccolosanarico.com" data-count="horizontal" data-via="remotesynth" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-        
-
+      <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Check out my new post" data-url=<%= "http://"+request.host+post_path(post) %> data-count="horizontal" data-via="il_nico" target="_blank">
+        <span class="vhidden">Tweet</span>
+      </a>
     </div>
   </div>
 <% end %>

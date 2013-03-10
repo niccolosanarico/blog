@@ -8,6 +8,9 @@ class PostsController < ApplicationController
 
         if(params[:publish])
             post.status="public";
+            if(post.published_at.nil?)
+                post.published_at = Time::now
+            end
             post.save  
         end
 
@@ -60,7 +63,7 @@ class PostsController < ApplicationController
     def feed
         @title = "A Pinch of Value"
 
-        @posts = Post.order("updated_at desc")
+        @posts = Post.where(:status=>'public').order("published_at desc")
 
         @updated = @posts.first.updated_at unless @posts.empty?
 
