@@ -17,7 +17,7 @@
 </div>
 <div class="span2">
   <p>Created On: </p><%= @post.created_at.strftime("%b %-d, %Y") %>
-  <p>Published On: </p><%= @post.published_at.strftime("%b %-d, %Y")%>
+  <p>Published On: </p><%= @post.published_at.nil? ? nil: @post.published_at.strftime("%b %-d, %Y")%>
   <p>Last Edited On: </p><%= @post.updated_at.strftime("%b %-d, %Y") %>
 </div>
     <% else %>
