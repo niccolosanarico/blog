@@ -1,15 +1,14 @@
-<div class="row-fluid">
-    <%= will_paginate %>
+<div class="span9">
+<%= will_paginate @posts %>
 
-    <ul class="posts">
-        <% @posts.each do |p| %>
-            <li>
-            <p><%= link_to p.title, p %> - <%= p.created_at %> - <%= p.status %> - <%= link_to "edit", edit_post_path(p) %>
-            </li>
-        <% end %>
-    </ul>
+<ul class="posts">
+  <% @posts.each do |p| %>
+    <li>
+  <p><%= link_to p.title, p %> - <%= p.created_at %> - <%= p.status %> - <%= link_to "edit", edit_post_path(p) %>
+  </li>
+<% end %>
+</ul>
 
-    <%= will_paginate %>
+<%= will_paginate %>
 
 </div>
-

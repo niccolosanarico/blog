@@ -17,7 +17,7 @@ Blog::Application.routes.draw do
 
   root to: 'blog#index'
 
-  match '/archive',   to: 'blog#archive'
+  match '/archive',   to: 'posts#archive'
   match '/feed',      to: 'posts#feed', :as => :feed, :defaults => { :format => 'atom' }
   match '/thanks',    to: 'blog#thanks'
   match '/signup',    to: 'users#new'

@@ -1,18 +1,25 @@
-<div class="span9 blogpost">
-  <!-- Main body -->
-  <div class="posttitle">
-    <div class="posttitle_text">
-      <p> This is my post title </p>
+<div class="span9">
+  <% @posts.each do |post| %>
+    <div class="blogpost">
+    <!-- Main body -->
+    <div class="posttitle">
+      <div class="posttitle_text">
+        <p> <%= post.title %> </p>
+      </div>
+      <div class="posttitle_date"> <%= post.created_at %> </div>
     </div>
-    <div class="posttitle_date"> Date/Time Placeholder </div>
-  </div>
-  <hr>
+    <hr>
 
-  <div class="postbody">
-    <p> This is going to be a post in my new blog</p>
-  </div>
+    <div class="postbody">
+      <p> <%= post.body %> </p>
+    </div>
 
-  <div class="postfooter">
-    <p> This is my footer, with related tags and social media stuff </p>
+    <div class="postfooter">
+          <a href="http://twitter.com/share" class="socialite twitter-share" data-url="http://www.niccolosanarico.com" data-count="horizontal" data-via="remotesynth" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+        
+
+    </div>
   </div>
+<% end %>
 </div>
+

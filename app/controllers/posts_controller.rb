@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     end
 
     def index
-        @posts = Post.paginate(page: params[:page], :per_page=>5).order('id DESC')
+        @posts = Post.paginate(page: params[:page], :per_page=>10).order('id DESC')
     end
 
     def edit
@@ -29,6 +29,14 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        if(@post.status != 'public')
+            flash.now["alert"] = "The post you are looking for does not exist"
+            @post = nil
+        end
+    end
+
+    def archive
+        @posts = Post.paginate(page: params[:page], :per_page=>20).where(:status=>'public').order('created_at DESC')
     end
 
     def update
@@ -39,6 +47,7 @@ class PostsController < ApplicationController
         if(params[:publish])
             post.status="public";
             post.save  
+            redirect_to post_path(:id=>post.id)
         end
 
         if(params[:save])

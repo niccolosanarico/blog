@@ -1,14 +1,9 @@
 class BlogController < ApplicationController
 
     def index
+        @posts = Post.where(:status=>'public').order(:created_at).reverse_order
     end
 
-    def archive
-    end
-
-    def rss
-    end
-    
     def thanks
     end
 end

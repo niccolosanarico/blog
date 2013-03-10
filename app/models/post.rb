@@ -11,7 +11,8 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :body, :title, :status
-
-  validates :title, presence: true
+    extend FriendlyId
+    attr_accessible :body, :title, :status, :slug
+    friendly_id :title, use: :slugged
+    validates :title, presence: true
 end

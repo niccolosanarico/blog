@@ -1,23 +1,21 @@
-<div class="row-fluid">
-    <% if signed_in? %>
-        <div class="span6 offset1">
-            <%= form_tag(posts_path, :id=>"post-form") do %>
-                <div>
-                    <p>Insert title: <p>
-                    <%= text_field_tag 'title', nil, :class=>"-post-title" %> 
-                </div>
-                <div>
-                    <p>Insert body: <p>
-                    <%= text_area_tag 'body', 'Insert text', :size=>"80x20", :class=>"post-body" %> 
-                </div>
-                <div>
-                    <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
-                    <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
-                </div>
-            <% end %>
-        </div>
-    <% else %>
-        <p>Access denied</p>
-    <% end %>
+<% if signed_in? %>
+  <div class="span6 offset3">
+  <%= form_tag(posts_path, :id=>"post-form") do %>
+    <div>
+    <p>Insert title: <p>
+    <%= text_field_tag 'title', nil, :class=>"-post-title" %> 
+  </div>
+  <div>
+    <p>Insert body: <p>
+    <%= text_area_tag 'body', 'Insert text', :size=>"80x20", :class=>"post-body" %> 
+  </div>
+  <div>
+    <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
+    <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
+  </div>
+<% end %>
 </div>
+    <% else %>
+  <p>Access denied</p>
+    <% end %>
 

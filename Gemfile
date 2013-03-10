@@ -8,6 +8,7 @@ gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'friendly_id'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

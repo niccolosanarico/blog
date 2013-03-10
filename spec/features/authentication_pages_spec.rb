@@ -11,7 +11,7 @@ describe "Authentication" do
         describe "With invalid credentials" do
             before { click_button "Sign in" }
 
-            it { should have_selector('h1', text: 'Sign in') }
+            it { should have_selector('h2', text: 'Sign in') }
             it { should have_selector('div.alert.alert-error', text: 'Failed login') }
 
             describe "After visiting another page" do

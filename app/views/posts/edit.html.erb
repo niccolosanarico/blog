@@ -1,27 +1,25 @@
-<div class="row-fluid">
-    <% if signed_in? %>
-        <div class="span8 offset1">
-            <%= form_tag(post_path(@post.id), :method=> :put, :id=>"edit-post-form") do %>
-                <div>
-                    <p>Insert title: <p>
-                    <%= text_field_tag 'title', @post.title, :class=>"post-title" %> 
-                </div>
-                <div>
-                    <p>Insert body: <p>
-                    <%= text_area_tag 'body', @post.body, :size=>"80x20", :class=>"post-body" %> 
-                </div>
-                <div>
-                    <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
-                    <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
-                </div>
-            <% end %>
-        </div>
-        <div class="span2">
-            <p>created On: </p><%= @post.created_at %>
-            <p>Last Edited On: </p><%= @post.updated_at %>
-        </div>
-    <% else %>
-        <p>Access denied</p>
-    <% end %>
+<% if signed_in? %>
+  <div class="span6 offset1">
+  <%= form_tag(post_path(@post.id), :method=> :put, :id=>"edit-post-form") do %>
+    <div>
+    <p>Insert title: <p>
+    <%= text_field_tag 'title', @post.title, :class=>"post-title" %> 
+  </div>
+  <div>
+    <p>Insert body: <p>
+    <%= text_area_tag 'body', @post.body, :size=>"80x20", :class=>"post-body" %> 
+  </div>
+  <div>
+    <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
+    <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
+  </div>
+<% end %>
 </div>
+<div class="span2">
+  <p>created On: </p><%= @post.created_at %>
+  <p>Last Edited On: </p><%= @post.updated_at %>
+</div>
+    <% else %>
+  <p>Access denied</p>
+    <% end %>
 

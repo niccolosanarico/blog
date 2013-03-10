@@ -94,6 +94,7 @@ p {
 
 .blogpost {
     padding: 10px;
+    margin-bottom: 25px;
     border-style: solid;
     border-color: #ddd;
     border-width: thin;
@@ -113,6 +114,13 @@ p {
     border-width: thin;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+#nicoimg {
+    width: 50px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    float: left;
 }
 
 #social {
@@ -186,6 +194,14 @@ footer {
             color: $text1;
         }
     }
+}
+
+/*
+ * Elements
+ */
+
+#sign-in-button {
+    text-align: center;
 }
 
 /*
