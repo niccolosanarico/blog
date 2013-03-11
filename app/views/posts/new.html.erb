@@ -1,15 +1,21 @@
 <% if signed_in? %>
-  <div class="span6 offset3">
+  <div class="span9">
   <%= form_tag(posts_path, :id=>"post-form") do %>
+    <div class="control-group">
     <div>
     <p>Insert title: <p>
-    <%= text_field_tag 'title', nil, :class=>"-post-title" %> 
+    <%= text_field_tag 'title', nil, :class=>"input-form-text input-xxlarge" %> 
   </div>
   <div>
     <p>Insert body: <p>
-    <%= text_area_tag 'body', 'Insert text', :size=>"80x20", :class=>"post-body" %> 
+    <%= text_area_tag 'body', nil, :size=>"80x20", :class=>"input-form-text input-xxlarge" %> 
   </div>
-  <div>
+    <div>
+      <p>Insert tags (comma separated): <p>
+      <%= text_field_tag 'tags', nil, :class=>"input-form-text input-xxlarge" %> 
+    </div>
+    </div>
+  <div class="control-group">
     <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
     <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
   </div>

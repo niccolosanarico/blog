@@ -14,7 +14,7 @@
     </div>
 
     <div class="postfooter">
-      <a href="http://twitter.com/share" class="socialite twitter-share" data-text=<%= post.title %>  data-url=<%= "http://"+request.host+post_path(@post) %> data-count="horizontal" data-via="il_nico" target="_blank">
+      <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= @post.title %>"  data-url=<%= "http://"+request.host+post_path(@post) %> data-count="horizontal" data-via="il_nico" target="_blank">
         <span class="vhidden">Tweet</span>
       </a>
     </div>

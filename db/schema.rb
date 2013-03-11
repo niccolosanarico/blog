@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310151023) do
+ActiveRecord::Schema.define(:version => 20130311213500) do
 
   create_table "logs", :force => true do |t|
     t.string   "notice"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130310151023) do
     t.string   "status"
     t.string   "slug"
     t.datetime "published_at"
+    t.string   "tags"
   end
 
   add_index "posts", ["published_at"], :name => "index_posts_on_published_at"

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.new(:title=>params[:title], :body=>params[:body])
+        post = Post.new(:title=>params[:title], :body=>params[:body], :tags=>params[:tags])
 
         if(params[:publish])
             post.status="public";
@@ -46,6 +46,7 @@ class PostsController < ApplicationController
         post = Post.find(params[:id])
         post.title = params[:title]
         post.body = params[:body]
+        post.tags = params[:tags]
 
         if(params[:publish])
             post.status="public";
