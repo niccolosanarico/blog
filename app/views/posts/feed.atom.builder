@@ -8,7 +8,7 @@ atom_feed :language => 'en-US' do |feed|
         feed.entry( item ) do |entry|
             #entry.url post_url(item)
             entry.title item.title
-            entry.content item.body, :type => 'html'
+            entry.content sanitize Kramdown::Document.new(item.body).to_html, :type => 'html'
 
             # the strftime is needed to work with Google Reader.
             
