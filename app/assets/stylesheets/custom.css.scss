@@ -43,7 +43,7 @@ textarea {
  */
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
+    line-height: 1em;
 }
 
 h1 {
@@ -70,7 +70,8 @@ h3 {
 
 p {
     font-size: 0.8em;
-    line-height: 1.1em;
+    font-family: sans-serif;
+    line-height: 1.3em;
 }
 
 #logo {
@@ -117,7 +118,7 @@ p {
 #about {
     padding: 10px;
     background-color: #F1F1F1;
-    font-size: 1.1em;
+    font-size: 1.2em;
     border-style: solid;
     border-color: #ddd;
     border-width: thin;
