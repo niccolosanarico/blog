@@ -1,4 +1,6 @@
 <div class="span9">
+  <%= will_paginate @posts %>
+
   <% @posts.each do |post| %>
     <div class="blogpost">
     <!-- Main body -->
@@ -21,5 +23,6 @@
     </div>
   </div>
 <% end %>
+  <%= will_paginate %>
 </div>
 
