@@ -1,28 +1,33 @@
 <div class="span9">
-  <%= will_paginate @posts %>
+    <%= will_paginate @posts %>
 
-  <% @posts.each do |post| %>
-    <div class="blogpost">
-    <!-- Main body -->
-    <div class="posttitle">
-      <div class="posttitle_text">
-        <p> <%= link_to post.title, post_path(post) %> </p>
-      </div>
-      <div class="posttitle_date"> <%= post.published_at.nil? ? nil : post.published_at.strftime("%b %-d, %Y") %> </div>
-    </div>
-    <hr>
+    <% @posts.each do |post| %>
+        <div class="blogpost">
+            <!-- Main body -->
+            <div class="posttitle">
+                <div class="posttitle_text">
+                    <p> <%= link_to post.title, post_path(post) %> </p>
+                </div>
+                <div class="posttitle_date"> <%= post.published_at.nil? ? nil : post.published_at.strftime("%b %-d, %Y") %> </div>
+            </div>
+            <hr>
 
-    <div class="postbody">
-      <%= sanitize Kramdown::Document.new(post.body).to_html %>
-    </div>
+            <div class="postbody">
+                <%= sanitize Kramdown::Document.new(post.body).to_html %>
+            </div>
 
-    <div class="postfooter">
-      <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= post.title %>" data-url=<%= "http://"+request.host+post_path(post) %> data-count="horizontal" data-via="il_nico" target="_blank">
-        <span class="vhidden">Tweet</span>
-      </a>
-    </div>
-  </div>
-<% end %>
-  <%= will_paginate @posts %>
+            <div class="postfooter">
+                <!--<a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= post.title %>" data-url=<%= "http://"+request.host+post_path(post) %> data-count="horizontal" data-via="il_nico" target="_blank">
+                    <span class="vhidden">Tweet</span>
+                </a>-->
+
+                <div class="addthis_pill_combo_style" addthis:url="<%= "http://"+request.host+post_path(post) %>">
+                    <a class="addthis_counter addthis_pill_style"></a>
+                    <a class="addthis_button_tweet"></a>
+                    <a class="addthis_button_facebook_like"></a>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    <%= will_paginate @posts %>
 </div>
-
