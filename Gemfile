@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11' #patched for latest vulnerability
+gem 'rails', ' ~> 3.2.13' #patched for latest vulnerability
 gem 'haml'
 #gem 'devise' #user authenication library
 gem 'kramdown'
-gem 'bcrypt-ruby' 
+gem 'bcrypt-ruby', ' ~> 3.0.0' 
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
