@@ -61,34 +61,30 @@
             <%= debug(params) if Rails.env.development? %>
         </div>
 
-        <script>
-            $(document).ready(function() {
-                Socialite.load();
-            });
-        </script>
 
         <script type="text/javascript">
-            var addthis_config = {
-pubid: ra-51fa7c764765c996
-            }
-</script>
 
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29141974-1']);
+            _gaq.push(['_setDomainName', 'niccolosanarico.com']);
+            _gaq.push(['_trackPageview']);
 
-<script type="text/javascript">
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-29141974-1']);
-    _gaq.push(['_setDomainName', 'niccolosanarico.com']);
-    _gaq.push(['_trackPageview']);
+         </script>
 
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
+         <script type="text/javascript">
+             var addthis_config = {
+pubid: ra-51fa7c764765c996,
+           data_ga_property: 'UA-29141974-1',
+                data_ga_social : true
+             }
+        </script>
 
-</script>
-
-</body>
-</html>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+     </body>
+ </html>
