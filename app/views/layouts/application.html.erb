@@ -10,8 +10,8 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        <%= auto_discovery_link_tag :atom, "/feed" %>
-        <%= auto_discovery_link_tag :rss, "/feed.rss" %>
+        <!-- <%= auto_discovery_link_tag :atom, "/feed" %> -->
+        <%= auto_discovery_link_tag(:rss, request.base_url) %>
 
     </head>
     <body>
@@ -40,7 +40,7 @@
                             <li><%= link_to image_tag("closed_lock.png", :border=> 0, :class=>"title_icon", :id=>'sign-in'),     signin_path %></li>
                         <% end %>
                         <li><%= link_to image_tag("clock.png", :border=> 0, :class=>"title_icon", :id=>'archive'),     archive_path %></li>
-                        <li><%= link_to image_tag("rss.png", :border=> 0, :class=>"title_icon", :id=>'feed'),       feed_path%></li>
+                        <!--<li><%= link_to image_tag("rss.png", :border=> 0, :class=>"title_icon", :id=>'feed'),       feed_path%></li>-->
                     </ul>
                 </div>
             </div>
