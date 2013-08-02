@@ -20,11 +20,7 @@
                 <!--<a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= post.title %>" data-url=<%= "http://"+request.host+post_path(post) %> data-count="horizontal" data-via="il_nico" target="_blank">
                     <span class="vhidden">Tweet</span>
                 </a>-->
-
-                <div class="addthis_pill_combo_style" addthis:url="<%= "http://"+request.host+post_path(post) %>">
-                    <a class="addthis_counter addthis_pill_style"></a>
-                    <a class="addthis_button_tweet"></a>
-                </div>
+                <a class="addthis_button" addthis:url="<%= request.base_url+post_path(post) %>" addthis:title="<%= post.title %>"></a>
             </div>
         </div>
     <% end %>

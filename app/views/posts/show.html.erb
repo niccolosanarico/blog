@@ -16,11 +16,8 @@
             <div class="postfooter">
                 <!--<a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= @post.title %>"  data-url=<%= "http://"+request.host+post_path(@post) %> data-count="horizontal" data-via="il_nico" target="_blank">
                     <span class="vhidden">Tweet</span></a>-->
-                <div class="addthis_pill_combo_style" addthis:url="<%= "http://"+request.host+post_path(@post) %>">
-                    <a class="addthis_counter addthis_pill_style"></a>
-                    <a class="addthis_button_tweet"></a>
-                </div>
-                <div>
+                <a class="addthis_button" addthis:url="<%= request.base_url+post_path(@post) %>" addthis:title="<%= @post.title %>"></a>
+                <hr/>
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -32,11 +29,10 @@
                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                  })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-            </div>
-        </div>
-    <% end %>
+             </script>
+             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+             <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+         </div>
+     </div>
+ <% end %>
 </div>
