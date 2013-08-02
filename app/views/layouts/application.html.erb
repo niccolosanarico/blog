@@ -11,7 +11,7 @@
         <![endif]-->
 
         <!-- <%= auto_discovery_link_tag :atom, "/feed" %> -->
-        <%= auto_discovery_link_tag(:rss, request.base_url) %>
+        <%= auto_discovery_link_tag(:rss, request.base_url+"/feed.rss") %>
 
     </head>
     <body>
