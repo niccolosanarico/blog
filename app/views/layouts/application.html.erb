@@ -10,8 +10,8 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        <!-- <%= auto_discovery_link_tag :atom, "/feed" %> -->
         <%= auto_discovery_link_tag(:rss, request.base_url+"/feed.rss") %>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
