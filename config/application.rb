@@ -64,5 +64,9 @@ module Blog
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # NS added to deploy to heroku
+    # http://stackoverflow.com/questions/18503073/cant-deploy-to-heroku-because-the-server-refused-the-connection
+    config.assets.initialize_on_precompile = false
   end
 end

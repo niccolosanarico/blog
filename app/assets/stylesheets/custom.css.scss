@@ -21,6 +21,7 @@ html {
 
 body {
     padding-top: 0px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 section {
@@ -70,8 +71,7 @@ h3 {
 
 p {
     font-size: 0.8em;
-    font-family: Helvetica, sans-serif;
-    line-height: 1.3em;
+    line-height: 1.5em;
 }
 
 #logo {
@@ -113,6 +113,12 @@ p {
         margin-bottom: 10px;
         clear: both;
     }
+}
+
+.postimage {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 #about {
@@ -162,7 +168,7 @@ p {
 
 .posttitle {
     p {
-        font-size: 1.2em;
+        font-size: 1.4em;
         color: #333;
     }
     a {
@@ -185,7 +191,7 @@ p {
 }
 
 .postbody {
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .postfooter {
