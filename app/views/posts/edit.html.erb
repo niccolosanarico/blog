@@ -1,27 +1,29 @@
 <% if signed_in? %>
-  <div class="span6 offset1">
-  <%= form_tag(post_path(@post.id), :method=> :put, :id=>"edit-post-form", :class=>" form-inline span9") do %>
+  <div class="col-md-7 col-md-offset1">
+  <%= form_tag(post_path(@post.id), :method=> :put, :id=>"edit-post-form", :class=>" form-inline ") do %>
     <div class="control-group">
     <div>
       <p>Insert title: <p>
-      <%= text_field_tag 'title', @post.title, :class=>"input-form-text input-xlarge" %> 
+      <%= text_field_tag 'title', @post.title, :class=>"form-control" %> 
     </div>
     <div>
       <p>Insert body: <p>
-      <%= text_area_tag 'body', @post.body, :size=>"80x20", :class=>"input-form-text input-xlarge" %> 
+      <%= text_area_tag 'body', @post.body, :size=>"80x20", :class=>"form-control", :rows=>"10" %> 
     </div>
     <div>
       <p>Insert tags (comma separated): <p>
-      <%= text_field_tag 'tags', @post.tags, :class=>"input-form-text input-xlarge" %> 
+      <%= text_field_tag 'tags', @post.tags, :class=>"form-control" %> 
     </div>
   </div>
   <div class="control-group">
     <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
     <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
+    <%= submit_tag("Preview", :class=>"btn", :name=>"preview") %>
+
   </div>
 <% end %>
 </div>
-<div class="span2">
+<div class="col-md-2">
   <p>Created On: </p><%= @post.created_at.strftime("%b %-d, %Y") %>
   <p>Published On: </p><%= @post.published_at.nil? ? nil: @post.published_at.strftime("%b %-d, %Y")%>
   <p>Last Edited On: </p><%= @post.updated_at.strftime("%b %-d, %Y") %>

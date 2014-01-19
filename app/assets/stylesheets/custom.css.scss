@@ -77,9 +77,11 @@ p {
 #logo {
     float: left;
     margin-right: 10px;
+    margin-left: 10px;
     color: #111;
     padding-top: 18px;
     font-weight: bold;
+    font-size: 1.2em;
     line-height: 1;
     &:hover {
       color: $text1;
@@ -133,7 +135,7 @@ p {
 }
 
 #nicoimg {
-    width: 60px;
+    width: 80px;
     padding-right: 4px;
     padding-bottom: 4px;
     float: left;
@@ -177,6 +179,10 @@ p {
         &:hover {
             color: #000;
         }
+    }
+    .editlink {
+        font-size: 0.7em;
+        margin-left: 20px;
     }
 }
 

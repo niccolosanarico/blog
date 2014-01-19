@@ -33,8 +33,10 @@ class PostsController < ApplicationController
     def show
         @post = Post.find(params[:id])
         if(@post.status != 'public')
-            flash.now["alert"] = "The post you are looking for does not exist"
-            @post = nil
+            if(!signed_in?)
+                flash.now["alert"] = "The post you are looking for does not exist"
+                @post = nil
+            end
         end
     end
 
@@ -61,6 +63,12 @@ class PostsController < ApplicationController
             post.status="draft"; 
             post.save  
             redirect_to edit_post_path(:id=>post.id)
+        end
+
+        if(params[:preview])
+            post.status="draft"; 
+            post.save  
+            redirect_to post_path(:id=>post.id)
         end
     end
 

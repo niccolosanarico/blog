@@ -1,18 +1,18 @@
 <% if signed_in? %>
-  <div class="span9">
+  <div class="col-xs-12 col-md-9">
   <%= form_tag(posts_path, :id=>"post-form") do %>
     <div class="control-group">
     <div>
     <p>Insert title: <p>
-    <%= text_field_tag 'title', nil, :class=>"input-form-text input-xxlarge" %> 
+    <%= text_field_tag 'title', nil, :class=>"form-control" %> 
   </div>
   <div>
     <p>Insert body: <p>
-    <%= text_area_tag 'body', nil, :size=>"80x20", :class=>"input-form-text input-xxlarge" %> 
+    <%= text_area_tag 'body', nil, :size=>"80x20", :class=>"form-control", :rows=>"10" %> 
   </div>
     <div>
       <p>Insert tags (comma separated): <p>
-      <%= text_field_tag 'tags', nil, :class=>"input-form-text input-xxlarge" %> 
+      <%= text_field_tag 'tags', nil, :class=>"form-control" %> 
     </div>
     </div>
   <div class="control-group">
