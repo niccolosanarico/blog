@@ -69,21 +69,6 @@ h3 {
     color: $text1;
 }
 
-p {
-    font-size: 0.8em;
-    line-height: 1.5em;
-}
-
-ul {
-    font-size: 0.8em;
-    line-height: 1.5em;
-}
-
-ol {
-    font-size: 0.8em;
-    line-height: 1.5em;
-}
-
 #logo {
     float: left;
     margin-right: 10px;
@@ -143,6 +128,10 @@ ol {
     border-width: thin;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    p {
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
 }
 
 #nicoimg {
@@ -208,7 +197,7 @@ ol {
 }
 
 .postbody {
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
 
 .postfooter {
