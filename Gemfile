@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', ' ~> 3.2.16' #patched for latest vulnerability
+gem 'rails', ' ~> 3.2.17' #patched for latest vulnerability
 gem 'haml'
 #gem 'devise' #user authenication library
 gem 'kramdown'
