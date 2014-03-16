@@ -12,9 +12,6 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'friendly_id'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 group :development, :test do
     gem 'rspec-rails'
     gem 'sqlite3'
@@ -52,17 +49,3 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
