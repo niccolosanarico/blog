@@ -11,19 +11,19 @@ class PostsController < ApplicationController
             if(post.published_at.nil?)
                 post.published_at = Time::now
             end
-            post.save  
+            post.save
         end
 
         if(params[:save])
-            post.status="draft"; 
-            post.save  
+            post.status="draft";
+            post.save
             redirect_to edit_post_path(:id=>post.id)
         end
 
     end
 
     def index
-        @posts = Post.paginate(page: params[:page], :per_page=>10).order('id DESC')
+        @posts = Post.paginate(page: params[:page], :per_page=>10).order('published_at DESC')
     end
 
     def edit
@@ -55,19 +55,19 @@ class PostsController < ApplicationController
             if(post.published_at.nil?)
                 post.published_at = Time::now
             end
-            post.save  
+            post.save
             redirect_to post_path(:id=>post.id)
         end
 
         if(params[:save])
-            post.status="draft"; 
-            post.save  
+            post.status="draft";
+            post.save
             redirect_to edit_post_path(:id=>post.id)
         end
 
         if(params[:preview])
-            post.status="draft"; 
-            post.save  
+            post.status="draft";
+            post.save
             redirect_to post_path(:id=>post.id)
         end
     end
