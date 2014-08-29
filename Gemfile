@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.0.0'
 
-gem 'rails', ' ~> 3.2.17' #patched for latest vulnerability
+gem 'rails', ' ~> 3.2.19' #patched for latest vulnerability
 gem 'haml'
 #gem 'devise' #user authenication library
 gem 'kramdown'
-gem 'bcrypt-ruby', ' ~> 3.0.0' 
+gem 'bcrypt-ruby', ' ~> 3.0.0'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
@@ -25,7 +25,7 @@ group :test do
     gem 'database_cleaner'
     gem 'launchy'
     gem 'factory_girl_rails'
-end 
+end
 
 group :production do
     gem 'pg'
@@ -48,4 +48,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
