@@ -24,6 +24,11 @@
           <div class="link_item">
             <%= link_to link.title, link.link, target: :_blank %>
           </div>
+          <% if signed_in? %>
+            <div class="pull-right">
+              <%= link_to("Delete", link_path(link), :confirm => 'Are you sure?', method: :delete) %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
