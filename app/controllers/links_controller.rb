@@ -20,7 +20,7 @@ class LinksController < ApplicationController
   def index
     @sections = Link.pluck('DISTINCT section')
 
-    @links = Link.order(created_at: :desc)
+    @links = Link.order("created_at desc")
 
     @sections_with_links = Hash.new
 
