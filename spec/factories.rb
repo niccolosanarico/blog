@@ -5,4 +5,10 @@ FactoryGirl.define do
         password "nicopamy"
         password_confirmation "nicopamy"
     end
+
+    factory :post do
+        title "new post"
+        body  "new post body"
+        status "published"
+    end
 end

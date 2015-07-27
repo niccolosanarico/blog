@@ -29,14 +29,15 @@ describe "Authentication" do
                 click_button "Sign in"
             end
 
-            it { should have_xpath("//img[@src=\"/assets/add.png\"]") }
-            it { should have_xpath("//img[@src=\"/assets/show_all.png\"]") }
-            it { should have_xpath("//img[@src=\"/assets/open_lock.png\"]") }
-            it { should_not have_xpath("//img[@src=\"/assets/closed_lock.png\"]") }
+            it { should have_link("new post", new_post_path) }
+            it { should have_link("all posts", posts_path) }
+            it { should have_link("new link", new_link_path) }
+            it { should have_link("sign out", signout_path) }
+            it { should_not have_link("sign-in", signin_path) }
 
             describe "followed by signout" do
-                before { click_link "signout-link" }
-                it { should have_xpath("//img[@src=\"/assets/closed_lock.png\"]") }
+                before { click_link "sign out" }
+                it { should have_link("sign-in", signin_path) }
             end
         end
     end

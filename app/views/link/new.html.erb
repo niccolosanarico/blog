@@ -1,0 +1,21 @@
+<% if signed_in? %>
+  <div class="col-xs-12 col-md-9">
+    <%= form_tag(links_path, :id=>"link-form") do %>
+      <div class="control-group">
+        <div>
+          <p>Insert title: <p>
+          <%= text_field_tag 'link_title', nil, :class=>"form-control" %>
+        </div>
+        <div>
+          <p>Insert link: <p>
+          <%= text_field_tag 'link_link', nil, :class=>"form-control" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= submit_tag("Save", :class=>"btn", :name=>"save") %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Access denied</p>
+<% end %>

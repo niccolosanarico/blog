@@ -4,15 +4,15 @@
     <div class="control-group">
     <div>
       <p>Insert title: <p>
-      <%= text_field_tag 'title', @post.title, :class=>"form-control" %> 
+      <%= text_field_tag 'post_title', @post.title, :class=>"form-control" %>
     </div>
     <div>
       <p>Insert body: <p>
-      <%= text_area_tag 'body', @post.body, :size=>"80x20", :class=>"form-control", :rows=>"10" %> 
+      <%= text_area_tag 'post_body', @post.body, :size=>"80x20", :class=>"form-control", :rows=>"10" %>
     </div>
     <div>
       <p>Insert tags (comma separated): <p>
-      <%= text_field_tag 'tags', @post.tags, :class=>"form-control" %> 
+      <%= text_field_tag 'tags', @post.tags, :class=>"form-control" %>
     </div>
   </div>
   <div class="control-group">
@@ -29,6 +29,7 @@
   <p>Last Edited On: </p><%= @post.updated_at.strftime("%b %-d, %Y") %>
 </div>
     <% else %>
-  <p>Access denied</p>
+    <div class="col-md-7 col-md-offset1">
+      <p>Access denied</p>
+    </div>
     <% end %>
-

@@ -31,17 +31,19 @@
                 <%= link_to "<<= A Pinch of Value =>>", root_path, id: "logo"%>
             </div>
 
-            <div class="navbar-collapse collapse" id="navbar-menu"> 
+            <div class="navbar-collapse collapse" id="navbar-menu">
                 <ul class="nav navbar-nav pull-right">
                     <% if signed_in? %>
-                        <li><%= link_to 'new',     new_post_path %></li>
-                        <li><%= link_to 'all',     posts_path %></li>
+                        <li><%= link_to 'new post',     new_post_path %></li>
+                        <li><%= link_to 'all posts',    posts_path %></li>
+                        <li><%= link_to 'new link',     new_link_path %></li>
                         <li><%= link_to 'sign out',     signout_path, :id => "signout-link"%></li>
 
-                    <% else %>    
+                    <% else %>
                         <li><%= link_to 'sign-in',     signin_path %></li>
                     <% end %>
                     <!--<li><%= link_to image_tag("rss.png", :border=> 0, :class=>"title_icon", :id=>'feed'),       feed_path%></li>-->
+                    <li><%= link_to 'startup links',       links_path %></li>
                     <li><%= link_to 'archive',     archive_path %></li>
                 </ul>
             </div>

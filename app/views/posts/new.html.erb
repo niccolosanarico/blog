@@ -4,15 +4,15 @@
     <div class="control-group">
     <div>
     <p>Insert title: <p>
-    <%= text_field_tag 'title', nil, :class=>"form-control" %> 
+    <%= text_field_tag 'post_title', nil, :class=>"form-control" %>
   </div>
   <div>
     <p>Insert body: <p>
-    <%= text_area_tag 'body', nil, :size=>"80x20", :class=>"form-control", :rows=>"10" %> 
+    <%= text_area_tag 'post_body', nil, :size=>"80x20", :class=>"form-control", :rows=>"10" %>
   </div>
     <div>
       <p>Insert tags (comma separated): <p>
-      <%= text_field_tag 'tags', nil, :class=>"form-control" %> 
+      <%= text_field_tag 'tags', nil, :class=>"form-control" %>
     </div>
     </div>
   <div class="control-group">
@@ -22,6 +22,7 @@
 <% end %>
 </div>
     <% else %>
-  <p>Access denied</p>
+    <div class="col-md-7 col-md-offset1">
+      <p>Access denied</p>
+    </div>
     <% end %>
-

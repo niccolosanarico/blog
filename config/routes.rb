@@ -1,5 +1,11 @@
 Blog::Application.routes.draw do
 
+  get "link/new"
+
+  get "link/edit"
+
+  get "link/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -14,6 +20,7 @@ Blog::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts
+  resources :links
 
   root to: 'blog#index'
 
@@ -25,7 +32,7 @@ Blog::Application.routes.draw do
   match '/signout',   to: 'sessions#destroy'
 
   #end
-  
+
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
