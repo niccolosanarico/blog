@@ -18,7 +18,7 @@ class LinksController < ApplicationController
   end
 
   def index
-    @sections = Link.order("section desc").pluck('DISTINCT section')
+    @sections = Link.order("section asc").pluck('DISTINCT section')
 
     @links = Link.order("created_at desc")
 
