@@ -1,8 +1,30 @@
 <div class="col-md-9 col-xs-12">
-  <% @links.each do | link | %>
+  <div class="panel panel-info">
+    <div class="panel-heading">Quick Jump To Sections</div>
+    <div class="panel-body">
+      <% @sections.each do | section | %>
+        <% if !section.nil? %>
+            <div><%= link_to section, links_path(:anchor => section.downcase.tr(" s", "_")) %></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-9 col-xs-12">
+  <% @sections_with_links.each do | s, links | %>
+    <% next unless !s.nil? %>
     <div class="panel panel-default">
+      <div class="panel-heading" id= <%= s.downcase.tr(" s", "_") %> >
+        <%= s %>
+        <div class="pull-right"><a href="#">Up</a></div>
+      </div>
       <div class="panel-body">
-        <%= link_to link.title, link.link %>
+        <% links.each do | link | %>
+          <div class="link_item">
+            <%= link_to link.title, link.link, target: :_blank %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

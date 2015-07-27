@@ -6,6 +6,7 @@
 
 $text1: #666;
 $text2: #999;
+$text3: #333;
 
 @mixin box_sizing {
     -moz-box-sizing: border-box;
@@ -39,8 +40,8 @@ textarea {
     }
 }
 
-/* 
- * typography 
+/*
+ * typography
  */
 
 h1, h2, h3, h4, h5, h6 {
@@ -209,7 +210,7 @@ h3 {
     }
 }
 
-/* 
+/*
  * Footer
  */
 
@@ -223,7 +224,7 @@ footer {
     .madewithlove {
         float:left;
     }
-  
+
     .thanks {
         float: right;
         color: $text2;
@@ -240,6 +241,24 @@ footer {
 
 #sign-in-button {
     text-align: center;
+}
+
+/*
+ * Links
+ */
+
+.link_item {
+  margin-top: 10px;
+  border-bottom: 1px lightgrey dotted;
+
+  a {
+    color: $text3;
+    
+    &:hover {
+      color: $text1;
+      text-decoration: none;
+    }
+  }
 }
 
 /*

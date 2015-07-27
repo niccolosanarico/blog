@@ -3,7 +3,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    link = Link.new(:title => params[:link_title], :link => params[:link_link])
+    link = Link.new(:title => params[:link_title], :link => params[:link_link], :section => params[:link_section])
 
     if(link.save)
       redirect_to links_path
@@ -18,13 +18,23 @@ class LinksController < ApplicationController
   end
 
   def index
-    @links = Link.order(order: :desc)
+    @sections = Link.pluck('DISTINCT section')
+
+    @links = Link.order(created_at: :desc)
+
+    @sections_with_links = Hash.new
+
+    @sections.each do |section|
+      @sections_with_links[section] = @links.select { |link| link.section == section }
+    end
+
   end
 
   def update
     link = Link.find(params[:id])
     link.title = params[:link_title]
     link.link = params[:link_link]
+    link.section = params[:link_section]
 
     if(link.save)
       redirect_to links_path

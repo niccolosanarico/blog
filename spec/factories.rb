@@ -7,8 +7,14 @@ FactoryGirl.define do
     end
 
     factory :post do
-        title "new post"
-        body  "new post body"
-        status "published"
+        title   "new post"
+        body    "new post body"
+        status  "published"
+    end
+
+    factory :link do
+        title     "new link"
+        link      "http://www.google.com"
+        section   "Links"
     end
 end
