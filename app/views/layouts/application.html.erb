@@ -1,101 +1,142 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>A Pinch of Value</title>
-        <%= stylesheet_link_tag    "application", :media => "all" %>
-        <%= javascript_include_tag "application" %>
-        <%= csrf_meta_tags %>
+
+<head>
+  <title>A Pinch of Value</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
 
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
         <%= auto_discovery_link_tag(:rss, request.base_url+"/feed.rss") %>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+          <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
-    </head>
-    <body>
+</head>
 
-        <div class="container">
+<body>
 
-            <nav class="navbar navbar-default" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-menu">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+  <div class="container">
 
-                <%= link_to "<<= A Pinch of Value =>>", root_path, id: "logo"%>
-            </div>
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-            <div class="navbar-collapse collapse" id="navbar-menu">
-                <ul class="nav navbar-nav pull-right">
-                    <% if signed_in? %>
-                        <li><%= link_to 'new post',     new_post_path %></li>
-                        <li><%= link_to 'all posts',    posts_path %></li>
-                        <li><%= link_to 'new link',     new_link_path %></li>
-                        <li><%= link_to 'sign out',     signout_path, :id => "signout-link"%></li>
+        <%= link_to "<<= A Pinch of Value =>>", root_path, id: "logo"%>
+      </div>
 
-                    <% else %>
-                        <li><%= link_to 'sign-in',     signin_path %></li>
-                    <% end %>
-                    <!--<li><%= link_to image_tag("rss.png", :border=> 0, :class=>"title_icon", :id=>'feed'),       feed_path%></li>-->
-                    <li><%= link_to 'startup links',       links_path %></li>
-                    <li><%= link_to 'archive',     archive_path %></li>
-                </ul>
-            </div>
-            </nav>
+      <div class="navbar-collapse collapse" id="navbar-menu">
+        <ul class="nav navbar-nav pull-right">
+          <% if signed_in? %>
+            <li>
+              <%= link_to 'new post',     new_post_path %>
+            </li>
+            <li>
+              <%= link_to 'all posts',    posts_path %>
+            </li>
+            <li>
+              <%= link_to 'new link',     new_link_path %>
+            </li>
+            <li>
+              <%= link_to 'sign out',     signout_path, :id => "signout-link"%>
+            </li>
+
+            <% else %>
+              <li>
+                <%= link_to 'sign-in',     signin_path %>
+              </li>
+              <% end %>
+                <!--<li><%= link_to image_tag("rss.png", :border=> 0, :class=>"title_icon", :id=>'feed'),       feed_path%></li>-->
+                <li>
+                  <%= link_to 'startup links',       links_path %>
+                </li>
+                <li>
+                  <%= link_to 'archive',     archive_path %>
+                </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <hr style="margin-top: 0px; margin-bottom: 20px;">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+      <% end %>
+
+        <div class="row">
+          <%= yield %>
+            <%= render 'layouts/sidebar' %>
         </div>
-
-        <div class="container">
-            <hr style="margin-top: 0px; margin-bottom: 20px;">
-            <% flash.each do |key, value| %>
-                <div class="alert alert-<%= key %>"><%= value %></div>
-            <% end %>
-
-            <div class="row">
-                <%= yield %>
-                <%= render 'layouts/sidebar' %>
-            </div>
-            <%= render 'layouts/footer' %>
-            <%= debug(params) if Rails.env.development? %>
-        </div>
+        <%= render 'layouts/footer' %>
+          <%= debug(params) if Rails.env.development? %>
+  </div>
 
 
-        <script type="text/javascript">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29141974-1']);
+    _gaq.push(['_setDomainName', 'niccolosanarico.com']);
+    _gaq.push(['_trackPageview']);
 
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-29141974-1']);
-            _gaq.push(['_setDomainName', 'niccolosanarico.com']);
-            _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 
-            (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-             })();
+  <script type="text/javascript">
+    var addthis_config = {
+      pubid: ra - 51 fa7c764765c996,
+      data_ga_property: 'UA-29141974-1',
+      data_ga_social: true
+    }
+  </script>
 
-         </script>
-
-         <script type="text/javascript">
-             var addthis_config = {
-pubid: ra-51fa7c764765c996,
-       data_ga_property: 'UA-29141974-1',
-       data_ga_social : true
-             }
-         </script>
-
-         <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#domready=1"></script>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#domready=1"></script>
 
 
-         <script type="text/javascript">
-             setTimeout(function(){var a=document.createElement("script");
-                     var b=document.getElementsByTagName("script")[0];
-                     a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0016/3698.js?"+Math.floor(new Date().getTime()/3600000);
-                     a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-             </script>
-         </body>
-     </html>
+  <script type="text/javascript">
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//dnn506yrbagrg.cloudfront.net/pages/scripts/0016/3698.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
+  </script>
+
+  <script id="hypertingdaaadbf4-f6c5-4ade-a1b5-55b4eb65f26e" type="text/javascript"></script>
+  <script type="text/javascript">
+    (function() {
+      var hy = document.createElement("img");
+      if (document.location.protocol == "https:") hy.src = "https://duke.hyperting.com:443/gonzo.gif?id=2f135c3e0e38a4827d3820c96503857a";
+      else {
+        var pubservers = ["151.0.235.226", "151.0.235.227", "151.0.235.228"];
+        var genServ = Math.floor(Math.random() * pubservers.length);
+        var hyperServFound = pubservers[genServ];
+        hy.src = "http://" + hyperServFound + "/gonzo.gif?id=2f135c3e0e38a4827d3820c96503857a";
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hy, s);
+    })();
+  </script>
+
+</body>
+
+</html>
