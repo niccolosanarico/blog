@@ -99,7 +99,7 @@ h3 {
 
 .blogpost {
     padding: 10px;
-    background-color: #F1F1F1;
+    background-color: #F9F9F9;
     margin-bottom: 25px;
     border-style: solid;
     border-color: #ddd;
@@ -130,7 +130,7 @@ h3 {
     -moz-border-radius: 5px;
     border-radius: 5px;
     p {
-        font-size: 0.8em;
+        font-size: 0.9em;
         line-height: 1.5em;
     }
 }
@@ -152,6 +152,10 @@ h3 {
     border-radius: 5px;
 }
 
+#hyperting {
+  margin-top: 20px;
+}
+
 #tags {
     margin-top: 5px;
     padding: 10px;
@@ -171,7 +175,7 @@ h3 {
 
 .posttitle {
     p {
-        font-size: 1.4em;
+        font-size: 1.8em;
         color: #333;
     }
     a {
@@ -198,7 +202,8 @@ h3 {
 }
 
 .postbody {
-    font-size: 0.9em;
+    font-size: 1.4em;
+    line-height: 1.8em;
 }
 
 .postfooter {
@@ -253,7 +258,7 @@ footer {
 
   a {
     color: $text3;
-    
+
     &:hover {
       color: $text1;
       text-decoration: none;
