@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.1'
 
-gem 'rails', ' ~> 3.2.19' #patched for latest vulnerability
+gem 'rails', ' ~> 4.2.7' #patched for latest vulnerability
 gem 'haml'
 #gem 'devise' #user authenication library
 gem 'kramdown'
@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'friendly_id'
+gem 'responders', '~> 2.0'
 
 group :development, :test do
     gem 'rspec-rails'
@@ -48,3 +49,4 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'puma'

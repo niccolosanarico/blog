@@ -1,9 +1,10 @@
 class LinksController < ApplicationController
   def new
+    @link = Link.new
   end
 
   def create
-    link = Link.new(:title => params[:link_title], :link => params[:link_link], :section => params[:link_section])
+    link = Link.new(link_attributes)
 
     if(link.save)
       redirect_to links_path
@@ -32,9 +33,9 @@ class LinksController < ApplicationController
 
   def update
     link = Link.find(params[:id])
-    link.title = params[:link_title]
-    link.link = params[:link_link]
-    link.section = params[:link_section]
+    link.title = params[:title]
+    link.link = params[:link]
+    link.section = params[:section]
 
     if(link.save)
       redirect_to links_path
@@ -47,5 +48,15 @@ class LinksController < ApplicationController
   def destroy
     Link.find(params[:id]).destroy
     redirect_to links_path
+  end
+
+  protected
+
+  def link_attributes
+    params.require(:link).permit(
+      :link,
+      :title,
+      :section
+    )
   end
 end

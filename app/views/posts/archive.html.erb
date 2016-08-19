@@ -5,9 +5,9 @@
 <ul class="posts">
   <% @posts.each do |p| %>
     <li>
-  <p><%= link_to p.title, p %> - <%= p.published_at.nil? ? nil : p.published_at.strftime("%b %-d, %Y") %> 
-  </li>
-<% end %>
+      <p><%= link_to p.title, post_path(p) %> - <%= p.published_at.nil? ? nil : p.published_at.strftime("%b %-d, %Y") %>
+    </li>
+  <% end %>
 </ul>
 
 <%= will_paginate %>

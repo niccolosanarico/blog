@@ -1,23 +1,23 @@
 <% if signed_in? %>
   <div class="col-xs-12 col-md-9">
-  <%= form_tag(posts_path, :id=>"post-form") do %>
+  <%= form_for(@post, :id=>"post-form") do |f| %>
     <div class="control-group">
     <div>
     <p>Insert title: <p>
-    <%= text_field_tag 'post_title', nil, :class=>"form-control" %>
+    <%= f.text_field :title, :class=>"form-control" %>
   </div>
   <div>
     <p>Insert body: <p>
-    <%= text_area_tag 'post_body', nil, :size=>"80x20", :class=>"form-control", :rows=>"10" %>
+    <%= f.text_area :body, :size=>"80x20", :class=>"form-control", :rows=>"10" %>
   </div>
     <div>
       <p>Insert tags (comma separated): <p>
-      <%= text_field_tag 'tags', nil, :class=>"form-control" %>
+      <%= f.text_field :tags, :class=>"form-control" %>
     </div>
     </div>
   <div class="control-group">
-    <%= submit_tag("Save&Publish", :class=>"btn", :name=>"publish") %>
-    <%= submit_tag("Save draft", :class=>"btn", :name=>"save") %>
+    <%= f.submit("Save&Publish", :class=>"btn", :name=>"publish") %>
+    <%= f.submit("Save draft", :class=>"btn", :name=>"save") %>
   </div>
 <% end %>
 </div>

@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
 
     def new
+      @post = Post.new
     end
 
     def create
-        post = Post.new(:title=>params[:post_title], :body=>params[:post_body], :tags=>params[:tags])
+        post = Post.new(post_attributes)
 
         if(params[:publish])
             post.status="public";
@@ -27,11 +28,11 @@ class PostsController < ApplicationController
     end
 
     def edit
-        @post = Post.find(params[:id])
+        @post = Post.friendly.find(params[:id])
     end
 
     def show
-        @post = Post.find(params[:id])
+        @post = Post.friendly.find(params[:id])
         if(@post.status != 'public')
             if(!signed_in?)
                 flash.now["alert"] = "The post you are looking for does not exist"
@@ -45,9 +46,9 @@ class PostsController < ApplicationController
     end
 
     def update
-        post = Post.find(params[:id])
-        post.title = params[:post_title]
-        post.body = params[:post_body]
+        post = Post.friendly.find(params[:id])
+        post.title = params[:title]
+        post.body = params[:body]
         post.tags = params[:tags]
 
         if(params[:publish])
@@ -83,4 +84,15 @@ class PostsController < ApplicationController
             format.rss { render :layout => false }
         end
     end
+
+    protected
+
+    def post_attributes
+      params.require(:post).permit(
+        :title,
+        :body,
+        :tags
+      )
+    end
+
 end

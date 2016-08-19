@@ -24,12 +24,12 @@ Blog::Application.routes.draw do
 
   root to: 'blog#index'
 
-  match '/archive',   to: 'posts#archive'
-  match '/feed',      to: 'posts#feed', :as => :feed#, :defaults => { :format => 'atom' }
-  match '/thanks',    to: 'blog#thanks'
-  match '/signup',    to: 'users#new'
-  match '/signin',    to: 'sessions#new'
-  match '/signout',   to: 'sessions#destroy'
+  get '/archive',   to: 'posts#archive'
+  get '/feed',      to: 'posts#feed', :as => :feed#, :defaults => { :format => 'atom' }
+  get '/thanks',    to: 'blog#thanks'
+  get '/signup',    to: 'users#new'
+  get '/signin',    to: 'sessions#new'
+  get '/signout',   to: 'sessions#destroy'
 
   #end
 
