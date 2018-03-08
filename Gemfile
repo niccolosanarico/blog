@@ -34,6 +34,8 @@ group :production do
 end
 
 gem 'json'
+gem 'faraday'
+gem 'faraday_middleware'
 
 # Gems used only for assets and not required
 # in production environments by default.
