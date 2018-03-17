@@ -14,7 +14,7 @@ module LinkHelper
     begin
       clink = coinHiveAPI.post do |req|
         req.url 'link/create'
-        req.body = { secret: "WmpNlqOEoDXCPDybCQmzI9TltMFe7V8U", url: "#{link}", hashes: 128 }
+        req.body = { secret: "WmpNlqOEoDXCPDybCQmzI9TltMFe7V8U", url: "#{link}", hashes: 256 }
       end
     rescue Exception => e
       puts e
