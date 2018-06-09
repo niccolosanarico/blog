@@ -4,7 +4,7 @@ class Link < ActiveRecord::Base
   validates :link, presence: true
   validates :section, presence: true
 
-  before_validation do
-    self.link = ApplicationController.helpers.shorten_url_coinhive(self.link)
-  end
+  # before_validation do
+  #   self.link = ApplicationController.helpers.shorten_url_coinhive(self.link)
+  # end
 end
