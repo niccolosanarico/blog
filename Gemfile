@@ -44,7 +44,6 @@ group :assets do
     gem 'coffee-rails'
     gem 'compass'
     gem 'compass-rails'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier'
