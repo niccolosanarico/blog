@@ -12,6 +12,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'friendly_id'
 gem 'responders', '~> 2.0'
+gem 'sprockets', '~> 3.7'
 
 group :development, :test do
     gem 'rspec-rails'
