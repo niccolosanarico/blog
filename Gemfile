@@ -15,7 +15,7 @@ gem 'responders', '~> 2.0'
 
 group :development, :test do
     gem 'rspec-rails'
-    gem 'sqlite3'
+    gem 'sqlite3', '~> 1.3.6'
     gem 'annotate'
 end
 
